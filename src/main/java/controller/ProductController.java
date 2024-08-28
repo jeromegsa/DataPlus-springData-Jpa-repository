@@ -36,14 +36,18 @@ public class ProductController {
         return productRepository.save(product);    
     }
 
-    // @PutMapping("/{id}")
-    // public Product updateProduct(Long id, Product productDetails) {
-        
-    // }
-    // @DeleteMapping("/{id}")
-    // public void deleteProduct(Long id) {
-        
-    // }
+    @PutMapping("/{id}")
+    public Product updateProduct(Long id, Product productDetails) {
+         Product product=productRepository.findById(id).orElseThrow();
+         product.setName(productDetails.getName());
+         product.setPrice(productDetails.getPrice());
+        return productRepository.save(product);
+    }
+    @DeleteMapping("/{id}")
+    public void deleteProduct(Long id) {
+        Product product= productRepository.findById(id).orElseThrow();
+        productRepository.delete(product);
+    }
    
         
 }
