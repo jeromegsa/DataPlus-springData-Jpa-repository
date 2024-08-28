@@ -8,3 +8,13 @@ Elle sert à marquer une classe comme étant un repository, c'est-à dire un end
 ### Est-ce obligatoire ?
 
 NOn ! Quand on implémente déjà une interface comme `JpaRepostory `,Spring détecte automatiquement toute les repository.
+
+## @PathVariable vs @RequestBody vs @ReqestParam
+
+
+## @PathVariable 
+On utilise pour extraire une partie d'une variable dans notre chemin d'URL
+## @RequestBody
+Quand on reçoit les données via post
+## @ReqestParam
+On l'utilise quand on a des paramètres dans l'URL sous la forme `?param=valeur`
